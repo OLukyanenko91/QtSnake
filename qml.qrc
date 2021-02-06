@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
+        <file>res/Apple.qml</file>
+        <file>res/Game.qml</file>
+        <file>res/Snake.qml</file>
+        <file>res/img/Apple.png</file>
+        <file>res/Menu.qml</file>
     </qresource>
 </RCC>
