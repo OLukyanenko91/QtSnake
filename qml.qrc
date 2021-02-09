@@ -4,6 +4,11 @@
         <file>res/Game.qml</file>
         <file>res/Snake.qml</file>
         <file>res/img/Apple.png</file>
-        <file>res/Menu.qml</file>
+        <file>res/SMenu.qml</file>
+        <file>res/img/background.jpg</file>
+        <file>res/img/head.png</file>
+        <file>res/img/menu_background.jpg</file>
+        <file>res/MenuButton.qml</file>
+        <file>res/img/menu_background2.jpg</file>
     </qresource>
 </RCC>

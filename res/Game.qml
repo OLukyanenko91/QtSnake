@@ -5,32 +5,53 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Snake")
 
     Rectangle {
         anchors.fill: parent
         focus: true
 
-        Snake {}
+        Image {
+            id: background
+            anchors.fill: parent
+            source: "qrc:/res/img/background.jpg"
+        }
 
-        Apple { id: apple }
+        Snake {
+            id: snake
+        }
+
+        Apple {}
+
+        Item {
+            anchors.fill: parent
+
+            Image {
+                anchors.fill: parent
+                source: "qrc:/res/img/menu_background2.jpg"
+            }
+
+            SMenu {
+                anchors.fill: parent
+            }
+        }
 
         //TEST
         Keys.onPressed: {
             if (event.key === Qt.Key_A) {
-                apple.x -= 30;
+                snake.x -= 30;
                 event.accepted = true;
             }
             else if (event.key === Qt.Key_D) {
-                apple.x += 30;
+                snake.x += 30;
                 event.accepted = true;
             }
             else if (event.key === Qt.Key_W) {
-                apple.y -= 30;
+                snake.y -= 30;
                 event.accepted = true;
             }
             else if (event.key === Qt.Key_S) {
-                apple.y += 30;
+                snake.y += 30;
                 event.accepted = true;
             }
         }
