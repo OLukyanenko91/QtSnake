@@ -6,6 +6,8 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: controlsButton.top
         anchors.bottomMargin: 10
+
+        onClicked: hideMenuAnimation.start()
     }
 
     MenuButton {
@@ -13,6 +15,8 @@ Item {
         buttonText: "CONTROLS"
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
+
+        onClicked: message.visible = true
     }
 
     MenuButton {
@@ -20,5 +24,7 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: controlsButton.bottom
         anchors.topMargin: 10
+
+        onClicked: Qt.exit(0)
     }
 }

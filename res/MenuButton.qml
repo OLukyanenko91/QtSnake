@@ -2,7 +2,9 @@ import QtQuick 2.0
 import QtQuick.Controls 2.15
 
 Button {
+    id: menuButton
     property string buttonText: ""
+    property int rotationValue: 0
 
     contentItem: Text {
         text: buttonText
@@ -44,8 +46,22 @@ Button {
         }
     }
 
-    Behavior on rotation {
-        NumberAnimation { duration: 50 }
+    SequentialAnimation {
+        id: pushAnimation
+
+        NumberAnimation {
+            target: menuButton;
+            property: "rotation";
+            to: rotationValue;
+            duration: 50
+        }
+
+        NumberAnimation {
+            target: menuButton;
+            property: "rotation";
+            to: 0;
+            duration: 50
+        }
     }
 
     MouseArea {
@@ -63,10 +79,9 @@ Button {
             background.radius = 40;
         }
         onPressed: {
-            parent.rotation = Math.random() < 0.5 ? -3 : 3;
-        }
-        onReleased: {
-            parent.rotation = 0;
+            rotationValue = Math.random() < 0.5 ? -3 : 3;
+            pushAnimation.start();
+            parent.clicked();
         }
     }
 }
